@@ -85,6 +85,10 @@ main{
     background: var(--bg-dark);
 }
 
+.dark svg {
+    color: var(--color-white);
+}
+
 .hiden {
     overflow-y: hidden;
 }
@@ -156,15 +160,9 @@ main{
     gap: 32px;
 }
 
-.swich {
-    width: 24px;
-    height: 24px;
-    background: url(../img/moon.svg) no-repeat center;
+.swich svg {
     cursor: pointer;
-}
-
-.swich.active {
-    background: url(../img/sun.svg) no-repeat center;
+    font-size: 30px;
 }
 
 .header-link {
