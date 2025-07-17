@@ -10,12 +10,12 @@ const Header = () => {
     if (saved === 'light') return false
   });
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const usePreferDark = window.matchMedia("prefers-color-scheme:dark").matches
-    const dark = savedTheme === "dark" || (!savedTheme && usePreferDark)
-    setIsActive(dark)
-  },[])
+  // useEffect(() => {
+  //   const savedTheme = localStorage.getItem("theme");
+  //   const usePreferDark = window.matchMedia("prefers-color-scheme:dark").matches
+  //   const dark = savedTheme === "dark" || (!savedTheme && usePreferDark)
+  //   setIsActive(dark)
+  // },[])
 
   useEffect(() => {
     const root = document.body
