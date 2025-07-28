@@ -1,5 +1,6 @@
 import React from 'react'
 import SocialIcon from './SocialIcon'
+import { myFoto } from '../assets'
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
                     </p>
                     <SocialIcon/>
                 </div>
-                <figure className="hero-img"><img src="img/MG.jpg" alt="" /></figure>
+                <figure className="hero-img"><img src={myFoto} alt="" /></figure>
             </div>
         </section>  
   )

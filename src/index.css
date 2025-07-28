@@ -256,6 +256,7 @@ main{
 
 .social svg {
     fill: var(--color-primary);
+    font-size: 24px;
 }
 
 .social-item:hover svg {
