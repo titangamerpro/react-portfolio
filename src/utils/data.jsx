@@ -30,3 +30,26 @@ export const socialLinks = [
     label: "LinkedIn",
   },
 ];
+
+import { FaCrown, FaMobileAlt, FaGlobe } from 'react-icons/fa';
+
+export const servicesData = [
+  {
+    id: 1, // Уникальный идентификатор для ключей React
+    icon: FaCrown, // Компонент иконки React
+    title: 'UI/UX Design',
+    description: 'Turn what you have in mind of a digital product into reality. For any platform you consider.',
+  },
+  {
+    id: 2,
+    icon: FaMobileAlt,
+    title: 'Application Development',
+    description: 'Standard designing, building, and implementing your applications with documentation.',
+  },
+  {
+    id: 3,
+    icon: FaGlobe,
+    title: 'Web Development',
+    description: 'Create and maintain your websites and also take care of its performance and traffic capacity.',
+  },
+];

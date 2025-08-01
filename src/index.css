@@ -1153,9 +1153,10 @@ progress {
         z-index: 5;
     }
 
-    .burger.active{
-        background: url(../img/close.svg) no-repeat center;
+    .burger svg{
+        font-size: 40px;
     }
+
 }
 
 @media(max-width:768px){

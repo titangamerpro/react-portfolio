@@ -3,9 +3,11 @@ import { menuItems } from "../utils/data";
 import { Link } from "react-scroll";
 
 
-const Nav = () => {
+
+const Nav = ({iconMenu}) => {
+  // console.log(iconMenu);
   return (
-    <nav className="nav">
+    <nav className={`nav ${iconMenu ? '' : 'active' }`}>
       <ul className="menu">
         {menuItems &&
           menuItems.map((item, idx) => (

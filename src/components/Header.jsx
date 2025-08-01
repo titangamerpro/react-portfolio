@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
 import { IoSunnyOutline } from "react-icons/io5";
 import { FaMoon } from "react-icons/fa";
+import { IoIosMenu } from "react-icons/io";
+import { FaXmark } from "react-icons/fa6";
 
 const Header = () => {
   const [isActive, setIsActive] = useState( () => {
@@ -9,6 +11,8 @@ const Header = () => {
     if (saved === 'dark') return true
     if (saved === 'light') return false
   });
+
+  const [iconMenu, setIconMenu] = useState(true)
 
   // useEffect(() => {
   //   const savedTheme = localStorage.getItem("theme");
@@ -30,17 +34,23 @@ const Header = () => {
   }, [isActive])
 
   const toggleTheme = () => setIsActive(prev => !prev)
+
+  const handleMenu = () => {
+    setIconMenu(!iconMenu)
+  }
   
 
   return (
     <header className="header">
       <div className="header-fixed">
         <div className="container header-wrapper">
-          <div className="burger"></div>
+          <div className="burger" onClick={handleMenu} >
+            {iconMenu ? <IoIosMenu/> : <FaXmark/> }
+          </div>
           <a href="" className="header-logo">
             Michel
           </a>
-          <Nav />
+          <Nav iconMenu={iconMenu} />
           <div className="header-block">
             <button className="btn swich" onClick={toggleTheme}>
               {isActive ? <IoSunnyOutline/> : <FaMoon/>}
