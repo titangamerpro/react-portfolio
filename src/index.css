@@ -44,6 +44,8 @@ img {
     display: block;
 }
 
+
+
 button {
     border: none;
     background: transparent;
@@ -343,6 +345,11 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.services-block svg {
+    font-size: 25px;
+    color: #7e74f1;
 }
 
 .services-block-title {

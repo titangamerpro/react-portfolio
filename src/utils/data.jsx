@@ -32,6 +32,7 @@ export const socialLinks = [
 ];
 
 import { FaCrown, FaMobileAlt, FaGlobe } from 'react-icons/fa';
+import { portfolio1, portfolio2, portfolio3 } from "../assets/image";
 
 export const servicesData = [
   {
@@ -51,5 +52,36 @@ export const servicesData = [
     icon: FaGlobe,
     title: 'Web Development',
     description: 'Create and maintain your websites and also take care of its performance and traffic capacity.',
+  },
+];
+
+export const portfolioData = [
+  {
+    id: 1,
+    imageSrc: portfolio1,
+    title: 'Agency Website',
+    category: 'WordPress',
+    link: '#', // Замените на реальную ссылку
+  },
+  {
+    id: 2,
+    imageSrc: portfolio2,
+    title: 'React App',
+    category: 'React',
+    link: '#', // Замените на реальную ссылку
+  },
+  {
+    id: 3,
+    imageSrc: portfolio3,
+    title: 'PHP Project',
+    category: 'PHP',
+    link: '#', // Замените на реальную ссылку
+  },
+  {
+    id: 4,
+    imageSrc: portfolio1,
+    title: 'WordPress Project',
+    category: 'WordPress',
+    link: '#', // Замените на реальную ссылку
   },
 ];
