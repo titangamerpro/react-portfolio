@@ -1,13 +1,38 @@
-import React, { useState, useMemo } from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
+import { useSearchParams } from "react-router-dom";
 import { experienceData } from "../utils/experienceData";
 import { ExperienceTabs } from "./ExperienceTabs";
 import { ExperiencePanels } from "./ExperiencePanels";
 
-const ExperienceSection = () => {
-  // По умолчанию активен первый таб из данных
-  const [activeId, setActiveId] = useState(experienceData[0]?.id || "");
+const ids = experienceData.map((c) => c.id);
+const normalizeId = (id) => (ids.includes(id) ? id : experienceData[0]?.id || "");
 
-  // Быстрый доступ к активной записи
+const ExperienceSection = ({ initialActiveId }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const fromQuery = searchParams.get("tab");
+  const initial = normalizeId(initialActiveId || fromQuery || "");
+
+  const [activeId, setActiveId] = useState(initial);
+
+  // В запись URL
+  const setActive = useCallback(
+    (id) => {
+      const valid = normalizeId(id);
+      setActiveId(valid);
+      const next = new URLSearchParams(searchParams);
+      next.set("tab", valid);
+      setSearchParams(next, { replace: true });
+    },
+    [searchParams, setSearchParams]
+  );
+
+  // Реакция на изменение URL извне (назад/вперёд)
+  useEffect(() => {
+    const qId = normalizeId(searchParams.get("tab") || "");
+    if (qId !== activeId) setActiveId(qId);
+  }, [searchParams, activeId]);
+
   const activeCompany = useMemo(
     () => experienceData.find((c) => c.id === activeId),
     [activeId]
@@ -20,17 +45,9 @@ const ExperienceSection = () => {
         <p className="iner-title experience-title">Work Experices</p>
 
         <div className="experience-wrapper">
-          <ExperienceTabs
-            tabs={experienceData}
-            activeId={activeId}
-            onChange={setActiveId}
-          />
-
+          <ExperienceTabs tabs={experienceData} activeId={activeId} onChange={setActive} />
           <div className="experience-content">
-            <ExperiencePanels
-              company={activeCompany}
-              active
-            />
+            <ExperiencePanels company={activeCompany} active />
           </div>
         </div>
       </div>
