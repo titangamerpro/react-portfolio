@@ -8,7 +8,7 @@ import { SlickNextArrow, SlickPrevArrow } from "./CustomArrows";
 
 
 const Portfolios = () => {
-  const [activeButton, setActiveButton] = useState('next');
+  const [activeButton, setActiveButton] = useState('prev');
 
   const settings = {
     dots: false,
@@ -16,8 +16,8 @@ const Portfolios = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    nextArrow: <SlickNextArrow activeButton={activeButton}/>,
-    prevArrow: <SlickPrevArrow activeButton={activeButton} />,
+    nextArrow: <SlickNextArrow activeButton={activeButton} setActiveButton={setActiveButton} />,
+    prevArrow: <SlickPrevArrow activeButton={activeButton} setActiveButton={setActiveButton} />,
     responsive: [
       {
         breakpoint: 1201,
@@ -39,7 +39,7 @@ const Portfolios = () => {
   };
 
   return (
-    <secthion className="portfolio">
+    <section className="portfolio">
       <div className="container">
         <span className="iner-subtitle services-subtitle">MY WORKS</span>
         <p className="iner-title services-title"> Featured Portfolios</p>
@@ -62,7 +62,7 @@ const Portfolios = () => {
             ))}
         </Slider>
       </div>
-    </secthion>
+    </section>
   );
 };
 

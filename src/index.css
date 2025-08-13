@@ -88,7 +88,7 @@ main{
 }
 
 .dark svg {
-    color: var(--color-white);
+    color: var(--color-purple);
 }
 
 .hiden {
@@ -438,7 +438,7 @@ main{
 
 .slick-btn {
     position: absolute;
-    right: 40px;
+    right: 96px;
     top: -163px;
     width: 40px;
     height: 40px;
@@ -453,7 +453,7 @@ main{
 }
 
 .prev {
-    right: 96px;
+    right: 40px;
 }
 
 .slick-btn.active {
