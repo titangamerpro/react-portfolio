@@ -1,3 +1,4 @@
+import BlogSection from "./components/BlogSection"
 import ExperienceSection from "./components/ExperienceSection"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
@@ -20,6 +21,7 @@ function App() {
         <Specialized/>
         <Portfolios/>
         <ExperienceSection/>
+        <BlogSection/>
       </main>
       <Footer/>
     </>

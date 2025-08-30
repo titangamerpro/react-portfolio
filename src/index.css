@@ -51,6 +51,7 @@ button {
     background: transparent;
     outline: none;
     cursor: pointer;
+    font: inherit;
 }
 
 /* 
@@ -482,20 +483,21 @@ main{
     width: 280px;
 }
 
-.experience-tabs li {
+.experience-tabs button {
     padding: 14px 32px;
     border-radius: 4px;
     position: relative;
     cursor: pointer;
     transition: 0.3s ease;
+    text-align: left;
 }
 
-.experience-tabs li.active {
+.experience-tabs button.active {
     background: var(--bg-white);
     color: var(--color-purple);
 }
 
-.experience-tabs li.active::after {
+.experience-tabs button.active::after {
     content: "";
     width: 24px;
     height: 24px;
@@ -503,7 +505,9 @@ main{
     top: 50%;
     right: 14px;
     transform: translateY(-50%);
-    background: url(../img/tabs-arrow.svg);
+    background: url(./tabs-arrow.svg) no-repeat center;
+    display: block;
+    z-index: 5;
     animation: move 2s infinite linear;
 }
 

@@ -32,7 +32,8 @@ export const socialLinks = [
 ];
 
 import { FaCrown, FaMobileAlt, FaGlobe } from 'react-icons/fa';
-import { portfolio1, portfolio2, portfolio3 } from "../assets/image";
+import { blog1, blog2, blog3, portfolio1, portfolio2, portfolio3 } from "../assets/image";
+
 
 export const servicesData = [
   {
@@ -83,5 +84,45 @@ export const portfolioData = [
     title: 'WordPress Project',
     category: 'WordPress',
     link: '#', // Замените на реальную ссылку
+  },
+];
+
+export const fallbackPosts = [
+  {
+    id: "1",
+    title: "How to prototype in figma",
+    date: "July 15, 2021",
+    excerpt:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante scelerisque laoreet. Fusce finibus ...",
+    // Для public/img положи картинки в public/img и укажи так:
+    imageSrc: blog1,
+    href: "#",
+  },
+  {
+    id: "2",
+    title: "How to prototype in figma",
+    date: "Feb 19, 2022",
+    excerpt:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante scelerisque laoreet. Fusce finibus ...",
+    imageSrc: blog2,
+    href: "#",
+  },
+  {
+    id: "3",
+    title: "How to prototype in figma",
+    date: "Aug 15, 2022",
+    excerpt:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante scelerisque laoreet. Fusce finibus ...",
+    imageSrc: blog3,
+    href: "#",
+  },
+  {
+    id: "4",
+    title: "How to prototype in figma",
+    date: "June 17, 2022",
+    excerpt:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id magna nec ante scelerisque laoreet. Fusce finibus ...",
+    imageSrc: blog2,
+    href: "#",
   },
 ];

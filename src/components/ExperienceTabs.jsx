@@ -2,31 +2,29 @@ import React from "react";
 
 export const ExperienceTabs = ({ tabs, activeId, onChange }) => {
   return (
-    <ul className="experience-tabs" role="tablist" aria-label="Experience tabs">
+    <div
+      className="experience-tabs"
+      role="tablist"
+      aria-label="Experience tabs"
+    >
       {tabs.map((tab) => {
         const isActive = tab.id === activeId;
         return (
-          <li
+          <button
             key={tab.id}
+            type="button"
+            role="tab"
+            aria-selected={isActive}
+            aria-controls={`panel-${tab.id}`}
+            id={`tab-${tab.id}`}
             data-filter={tab.id}
-            className={isActive ? "active" : ""}
-            role="presentation"
+            className={`experience-tab-button ${isActive ? "active" : ""}`}
+            onClick={() => onChange(tab.id)}
           >
-            {/* Кнопка для доступности и управления */}
-            <button
-              type="button"
-              role="tab"
-              aria-selected={isActive}
-              aria-controls={`panel-${tab.id}`}
-              id={`tab-${tab.id}`}
-              onClick={() => onChange(tab.id)}
-              className="experience-tab-button"
-            >
-              {tab.label}
-            </button>
-          </li>
+            {tab.label}
+          </button>
         );
       })}
-    </ul>
+    </div>
   );
 };
